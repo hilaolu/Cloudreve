@@ -205,6 +205,7 @@ func (handler Driver) replaceSourceHost(origin string) (string, error) {
 		// 替换反代地址
 		source.Scheme = cdn.Scheme
 		source.Host = cdn.Host
+		source.Path = cdn.Path + source.Path
 		return source.String(), nil
 	}
 
